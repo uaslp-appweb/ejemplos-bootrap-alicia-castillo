@@ -12,8 +12,8 @@
   <body>
       <div class="container">
           <h1 class="text-center">Galería imagenes</h1>
-          <div class="card-columns">
-                <div class="card">
+          <div class="card-columns" id="galeria">
+                <!-- <div class="card">
                    <a href="#modal-1" data-toggle="modal"><img class="card-img-top" src="img/1.jpg" alt=""></a>
                    <div class="modal fade" id="modal-1">
                        <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -28,10 +28,28 @@
                 </div>
                 <div class="card">
                     <a><img class="card-img-top" src="img/3.jpg" alt=""></a>
-                </div>
+                </div>-->
           </div>
           
       </div>
+<script>
+var galeria = document.getElementById('galeria');
+var imagen = 1;
+for(imagen;imagen<12;imagen++){
+galeria.innerHTML += `<div class="card">
+                   <a href="#modal-${imagen}" data-toggle="modal"><img class="card-img-top" src="img/${imagen}.jpg" alt=""></a>
+                   <div class="modal fade" id="modal-${imagen}">
+                       <div class="modal-dialog modal-dialog-centered modal-lg">
+                           <div class="modal-content">
+                                <img class="img-fluid" src="img/${imagen}.jpg" alt="">
+                           </div>
+                       </div>
+                   </div>
+                </div>`;
+};
+
+</script>
+<!--${variable} eso es interpolar-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
